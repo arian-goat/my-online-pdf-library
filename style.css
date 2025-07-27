@@ -1,0 +1,284 @@
+/* تنظیمات پایه برای کل صفحه */
+body {
+    font-family: 'Vazirmatn', 'Poppins', sans-serif; /* اولویت با وزیرمتن برای فارسی، سپس پاپینز و فونت‌های عمومی */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* رنگ پس‌زمینه ملایم */
+    color: #333; /* رنگ متن اصلی */
+    line-height: 1.6;
+    direction: rtl; /* جهت راست به چپ برای کل صفحه */
+    text-align: right; /* تراز متن به راست */
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی ناخواسته */
+}
+
+/* کانتینر برای محدود کردن عرض محتوا در مرکز */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* قرار دادن در مرکز */
+    padding: 0 20px; /* پدینگ از چپ و راست برای موبایل */
+}
+
+/* استایل‌دهی به هدر اصلی */
+.main-header {
+    background-color: #2c3e50; /* رنگ سرمه‌ای تیره */
+    color: #fff;
+    padding: 30px 0; /* پدینگ بالا و پایین */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* سایه جذاب */
+}
+
+.main-header .logo {
+    display: flex; /* برای قرار گرفتن آیکون و متن در یک خط */
+    align-items: center; /* تراز عمودی */
+    justify-content: center; /* تراز افقی در مرکز */
+    margin-bottom: 10px;
+}
+
+.main-header .logo i {
+    font-size: 3rem; /* اندازه آیکون */
+    margin-left: 15px; /* فاصله آیکون از متن */
+    color: #3498db; /* رنگ آبی برای آیکون */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 3.2rem; /* اندازه بزرگتر برای عنوان */
+    font-weight: 700;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.9; /* کمی شفافیت برای متن توضیحی */
+}
+
+/* استایل‌دهی نوار جستجو */
+.search-bar {
+    display: flex; /* برای قرار گرفتن کادر و دکمه در یک خط */
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.search-bar input[type="text"] {
+    width: 60%; /* عرض کادر جستجو */
+    max-width: 400px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px 0 0 25px; /* گوشه‌های گرد سمت راست */
+    font-size: 1rem;
+    outline: none; /* حذف خط دور کادر در فوکوس */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    text-align: right; /* متن از راست به چپ */
+}
+
+.search-bar button {
+    background-color: #3498db; /* رنگ آبی برای دکمه */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 25px 25px 0; /* گوشه‌های گرد سمت چپ */
+    cursor: pointer; /* نشانگر دست هنگام هاور */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #2980b9; /* رنگ آبی تیره‌تر هنگام هاور */
+}
+
+/* استایل‌دهی به بخش اصلی محتوا */
+.main-content {
+    padding: 40px 0;
+}
+
+.category-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px; /* برای خط زیر عنوان */
+}
+
+.category-section h2::after { /* خط زیر عنوان */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+/* چیدمان شبکه‌ای کارت‌های دسته‌بندی */
+.category-grid {
+    display: grid;
+    /* تنظیم تعداد ستون‌ها: در صفحات بزرگ 3 ستون، سپس واکنش‌گرا می‌شوند */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* فاصله بین کارت‌ها */
+    justify-content: center; /* قرار دادن کارت‌ها در مرکز اگر کمتر از 3 ستون باشند */
+}
+
+/* استایل‌دهی به هر کارت دسته‌بندی */
+.category-card {
+    background-color: #fff;
+    border-radius: 12px; /* گوشه‌های گردتر */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* سایه عمیق‌تر */
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن نرم */
+    display: flex; /* برای چیدمان عمودی محتوا */
+    flex-direction: column; /* چیدمان ستونی */
+    align-items: center; /* تراز افقی در مرکز */
+    justify-content: space-between; /* پخش فضاهای خالی بین عناصر */
+    min-height: 220px; /* حداقل ارتفاع برای یکدست بودن کارت‌ها */
+}
+
+.category-card:hover {
+    transform: translateY(-8px); /* حرکت به سمت بالا هنگام هاور */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* سایه عمیق‌تر هنگام هاور */
+}
+
+.category-card .category-icon {
+    font-size: 4rem; /* اندازه بزرگتر آیکون */
+    color: #3498db; /* رنگ آبی برای آیکون */
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    color: #2c3e50; /* رنگ سرمه‌ای تیره برای عنوان کارت */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2rem; /* اندازه بزرگتر عنوان کارت */
+}
+
+.category-card p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1; /* اجازه می‌دهد متن پاراگراف فضای خالی را پر کند */
+}
+
+.category-card .view-more {
+    font-size: 1rem;
+    color: #3498db;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.category-card .view-more i {
+    margin-right: 8px; /* فاصله آیکون از متن */
+    transition: margin-right 0.3s ease;
+}
+
+.category-card:hover .view-more i {
+    margin-right: 12px; /* حرکت فلش به سمت چپ هنگام هاور */
+}
+
+/* استایل‌دهی به فوتر */
+.main-footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.95rem;
+}
+
+.main-footer a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.main-footer a:hover {
+    color: #fff; /* تغییر رنگ لینک هنگام هاور */
+}
+
+/* واکنش‌گرایی (Responsive Design) - تنظیمات برای صفحه‌های کوچکتر (موبایل و تبلت) */
+@media (max-width: 992px) { /* برای تبلت‌ها و بزرگتر */
+    .main-header h1 {
+        font-size: 2.8rem;
+    }
+    .main-header .logo i {
+        font-size: 2.5rem;
+    }
+    .category-section h2 {
+        font-size: 2.2rem;
+    }
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* کوچکتر کردن حداقل عرض کارت‌ها */
+    }
+}
+
+@media (max-width: 768px) { /* برای موبایل‌ها */
+    .main-header {
+        padding: 20px 0;
+    }
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+    .main-header .logo i {
+        font-size: 2rem;
+    }
+    .main-header p {
+        font-size: 1rem;
+    }
+    .search-bar input[type="text"] {
+        width: 80%; /* افزایش عرض کادر جستجو در موبایل */
+        max-width: 300px;
+    }
+    .category-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .category-card {
+        padding: 25px;
+    }
+    .category-card .category-icon {
+        font-size: 3.5rem;
+    }
+    .category-card h3 {
+        font-size: 1.6rem;
+    }
+    .main-footer {
+        padding: 20px 0;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) { /* برای موبایل‌های کوچک */
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+    .main-header .logo i {
+        font-size: 1.8rem;
+        margin-left: 10px;
+    }
+    .search-bar input[type="text"] {
+        width: 90%;
+        border-radius: 20px 0 0 20px;
+    }
+    .search-bar button {
+        border-radius: 0 20px 20px 0;
+    }
+    .category-card {
+        padding: 20px;
+    }
+    .category-card .category-icon {
+        font-size: 3rem;
+    }
+    .category-card h3 {
+        font-size: 1.4rem;
+    }
+    .category-card p {
+        font-size: 0.95rem;
+    }
+}
